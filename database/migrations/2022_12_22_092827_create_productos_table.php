@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->date('fecha_cad');
+            $table->string('fecha_cad');
             $table->float('precio');
             $table->string('descripcion')->nullable();
             $table->boolean('stock');
