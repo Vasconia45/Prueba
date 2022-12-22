@@ -18,6 +18,10 @@ class Vuelo extends Model
     ];
 
     public function usuarios(){
-        return $this->belongsToMany('App\Models\Usuario');
+        return $this->hasMany('App\Models\Usuario');
+    }
+
+    public function aeropuertos(){
+        return $this->belongsToMany('App\Models\Aeropuerto');
     }
 }

@@ -29,15 +29,15 @@ class Usuario extends Model
     ];
 
     public function role(){
-        return $this->hasOne('App\Models\Role');
+        return $this->belongsTo('App\Models\Role');
     }
 
     public function direccione(){
-        return $this->hasOne('App\Models\Direccione');
+        return $this->belongsTo('App\Models\Direccione');
     }
 
     public function vuelo(){
-        return $this->hasOne('App\Models\Vuelo');
+        return $this->belongsTo('App\Models\Vuelo');
     }
 
     public function comentarios(){
