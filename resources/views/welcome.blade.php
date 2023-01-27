@@ -23,9 +23,9 @@
             <li><a href="#marcas" style="text-decoration: none"
                     class="mr-2 text-sm text-gray-700 dark:text-gray-500 underline">@lang('messages.brands')</a></li>
             <li><a href="{{ route('productos_mostrar_lista_productos') }}" style="text-decoration: none"
-                    class="mr-2 text-sm text-gray-700 dark:text-gray-500 underline">Lista productos</a></li>
+                    class="mr-2 text-sm text-gray-700 dark:text-gray-500 underline">@lang('messages.List product')</a></li>
             <li><a href="{{ route('vuelos_mostrar_lista_vuelos') }}" style="text-decoration: none"
-                    class="mr-2 text-sm text-gray-700 dark:text-gray-500 underline">Lista vuelos</a></li>
+                    class="mr-2 text-sm text-gray-700 dark:text-gray-500 underline">@lang('messages.List flight')</a></li>
         </ul>
     @else
         <ul class="navbar-nav col-lg-2 col-md-3 col-4 flex-row justify-content-around">

@@ -8,7 +8,7 @@
         }
     </script>
     <div class="p-5">
-        <h1 style="text-align: center">@lang('messages.List of products')</h1>
+        <h1 style="text-align: center">@lang('messages.List of product')</h1>
         <div class="row">
             <div class="p-5" style="text-align: center">
                 <div>

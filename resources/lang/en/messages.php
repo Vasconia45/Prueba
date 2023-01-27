@@ -114,6 +114,9 @@ return[
     "Shopping list" => "Shopping list",
     "Total price of all products" => "Total price of all products",
     "Product" => "Product",
+    "List of product" => "List product",
+    "List flight" => "List flight",
+    "List product" => "List product",
     //Lista_Vuelos
 
     "Lista_vuelos"=>"Flight List",

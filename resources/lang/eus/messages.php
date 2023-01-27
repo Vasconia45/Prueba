@@ -111,6 +111,9 @@ return[
     "Shopping list" => "Erosketa-zerrenda",
     "Total price of all products" => "Produktu guztien prezioa",
     "Product" => "Produktua",
+    "List of product" => "Produktu zerrenda",
+    "List flight" => "Hegaldi zerrenda",
+    "List product" => "Produktu zerrenda",
 
     //Lista_Vuelos
 
