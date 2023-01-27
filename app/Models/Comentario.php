@@ -13,12 +13,12 @@ class Comentario extends Model
         'id',
         'texto',
         'puntuacion',
-        'id:usuario',
-        'id_producto'
+        'usuario_id',
+        'producto_id'
     ];
 
     public function usuario(){
-        return $this->belongsTo('App\Models\Comentario');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function producto(){

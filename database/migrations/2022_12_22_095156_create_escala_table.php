@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('escala', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_aeropuerto');
-            $table->foreign('id_aeropuerto')->references('id')->on('aeropuertos')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('id_vuelo');
-            $table->foreign('id_vuelo')->references('id')->on('vuelos')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('aeropuerto_id');
+            $table->foreign('aeropuerto_id')->references('id')->on('aeropuertos')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('vuelo_id');
+            $table->foreign('vuelo_id')->references('id')->on('vuelos')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

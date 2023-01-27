@@ -24,8 +24,8 @@ class Producto extends Model
         'sal',
         'ingredientes',
         'origen',
-        'id_categoria',
-        'id_marca'
+        'categoria_id',
+        'marca_id'
     ];
 
     public function marca(){
@@ -41,6 +41,6 @@ class Producto extends Model
     }
 
     public function pedidos(){
-        return $this->belongsToMany('App\Models\Pedido');
+        return $this->belongsToMany('App\Models\Pedido','pedido_producto',"pedido_id","producto_id")->withPivot('cantidad');
     }
 }

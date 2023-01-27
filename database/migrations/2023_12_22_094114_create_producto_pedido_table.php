@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('producto_pedido', function (Blueprint $table) {
-            $table->integer('cantidad');
-            $table->float('cambio_precio');
-            $table->unsignedBigInteger('id_pedido')->unique();
-            $table->foreign('id_pedido')->references('id')->on('pedidos')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('id_producto');
-            $table->foreign('id_producto')->references('id')->on('productos')->onUpdate('cascade')->onDelete('cascade');
+        Schema::create('pedido_producto', function (Blueprint $table) {
+            $table->integer("cantidad");
+            $table->unsignedBigInteger('pedido_id');
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('aeropuerto_destino');
             $table->integer('cantidad_pasajeros');
             $table->string('compañia');
+            $table->date('fecha');
+            $table->integer('precio');
             $table->timestamps();
         });
     }

@@ -24,13 +24,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriaSeeder::class);
         $this->call(ProductoSeeder::class);
         $this->call(ComentarioSeeder::class);
-        $this->call(DireccionSeeder::class);
+        $this->call(RolSeeder::class);
         $this->call(UsuarioSeeder::class);
         $this->call(PedidoSeeder::class);
         $this->call(Producto_pedidoSeeder::class);
         $this->call(VueloSeeder::class);
         $this->call(EscalaSeeder::class);
-        $this->call(RolSeeder::class);
         $this->call(AeropuertoSeeder::class);
     }
 }

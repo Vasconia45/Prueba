@@ -28,10 +28,10 @@ return new class extends Migration
             $table->float('sal');
             $table->string('ingredientes')->nullable();
             $table->string('origen');
-            $table->unsignedBigInteger('id_categoria');
-            $table->foreign('id_categoria')->references('id')->on('categorias')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('id_marca');
-            $table->foreign('id_marca')->references('id')->on('marcas')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('marca_id');
+            $table->foreign('marca_id')->references('id')->on('marcas')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

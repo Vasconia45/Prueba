@@ -12,14 +12,14 @@ class Pedido extends Model
     protected $fillable = [
         'id',
         'total',
-        'id_usuario'
+        'usuario_id'
     ];
 
     public function usuario(){
-        return $this->belongsTo('App\Models\Usuario');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function productos(){
-        return $this->belongsToMany('App\Models\Producto');
+        return $this->belongsToMany('App\Models\Producto','pedido_producto',"pedido_id","producto_id")->withPivot('cantidad');
     }
 }

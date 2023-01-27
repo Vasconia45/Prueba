@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Producto;
+use App\Models\Categoria;
+use App\Models\Marca;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -28,8 +30,8 @@ class ProductoSeeder extends Seeder
         $producto->sal = 3.7;
         $producto->ingredientes = 'Cacao-Leche-Pepas';
         $producto->origen = 'África';
-        $producto->id_categoria = 1;
-        $producto->id_marca = 2;
+        $producto->categoria_id = Categoria::all()->random()->id;
+        $producto->marca_id = Marca::all()->random()->id;
         $producto->save();
     }
 }

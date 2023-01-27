@@ -3,7 +3,12 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+
+use Illuminate\Auth\Access\Gate;
+use App\Models\User;
+use Illuminate\Contracts\Auth\Access\Gate as AccessGate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +30,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        FacadesGate::define('admin' , function(User $user){
+            if ($user->role_id==1){
+                return true;
+            }
+            return false;
+        });
     }
 }

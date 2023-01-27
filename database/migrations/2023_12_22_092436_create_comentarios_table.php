@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('texto');
             $table->integer('puntuacion');
-            $table->unsignedBigInteger('id_usuario');
-            $table->foreign('id_usuario')->references('id')->on('usuarios')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('id_producto');
-            $table->foreign('id_producto')->references('id')->on('productos')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
