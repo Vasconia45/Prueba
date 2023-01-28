@@ -114,6 +114,10 @@ return[
     "List of product" => "Lista productos",
     "List flight" => "Lista vuelos",
     "List product" => "Lista productos",
+    "Retrieve user" => "Recuperar Usuario",
+    "Retrieve" => "Recuperar",
+    "Edit" => "Editar",
+    "Modify" => "Modificar",
 
     //Lista_Vuelos
 

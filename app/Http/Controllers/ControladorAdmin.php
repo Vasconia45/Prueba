@@ -104,17 +104,74 @@ class ControladorAdmin extends Controller
     }
 
     public function editarUsuario($id,Request $request){
-        $user=User::find($id);
-        $rol=Role::find($request->rol);
-        $user->nombre = $request->nombre;
-        $user->apellido = $request->apellido;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->vuelo_id = null;
-        $user->role()->associate($rol)->save();
-        $usuarios = User::all();
-        return view("vistas_admin.lista_usuarios")->with("usuarios",$usuarios);
+        $user = User::find($id);
+        if($request->email == $user->email){
+            if($request->password == null){
+                $validation = $request->validate([
+                    'nombre' => ['required', 'string'],
+                    'apellido' => ['required', 'string'],
+                    'email' => ['required'],
+                ]);
+                if($validation){
+                    $user->nombre = $request->nombre;
+                    $user->apellido = $request->apellido;
+                    $user->email = $request->email;
+                    $user->save();
+                    return redirect()->route('admin_lista_usuarios');
+                }
+            }else{
+                $validation = $request->validate([
+                    'nombre' => ['required', 'string'],
+                    'apellido' => ['required', 'string'],
+                    'email' => ['required'],
+                    'password' => ['required', 'string'],
+                    'password2' => ['required', 'string', 'same:password'],
+                ]);
+                if($validation){
+                    $user->nombre = $request->nombre;
+                    $user->apellido = $request->apellido;
+                    $user->email = $request->email;
+                    $user->password = Hash::make($request->password);
+                    $user->save();
+                    return redirect()->route('admin_lista_usuarios');
+                }
+            }
+        }
+        else{
+            if($request->password == null){
+                $validation = $request->validate([
+                    'nombre' => ['required', 'string'],
+                    'apellido' => ['required', 'string'],
+                    'email' => ['required', 'string', 'email', 'max:255', 'unique:users' ,'regex:/^[a-zA-z0-9._-]+@\w+\.[com]+/'],
+                ]);
+                if($validation){
+                    $user->nombre = $request->nombre;
+                    $user->apellido = $request->apellido;
+                    $user->email = $request->email;
+                    $user->save();
+                    return redirect()->route('admin_lista_usuarios');
+                }
+            }
+            else{
+                $validation = $request->validate([
+                    'nombre' => ['required', 'string'],
+                    'apellido' => ['required', 'string'],
+                    'email' => ['required', 'string', 'email', 'max:255', 'unique:users' ,'regex:/^[a-zA-z0-9._-]+@\w+\.[com]+/'],
+                    'password' => ['required', 'string'],
+                    'password2' => ['required', 'string', 'same:password'],
+                ]);
+                if($validation){
+                    $user->nombre = $request->nombre;
+                    $user->apellido = $request->apellido;
+                    $user->email = $request->email;
+                    $user->password = Hash::make($request->password);
+                    $user->save();
+                    return redirect()->route('admin_lista_usuarios');
+                }
+            }
+        }
     }
+
 
     public function crear_usuario(Request $request){
         $validation = $request->validate([
@@ -264,7 +321,14 @@ class ControladorAdmin extends Controller
     }
 
     public function mostrarRecuperar(){
-        $usuarios=User::onlyTrashed()->get();
+        if(Auth()->user()->id == 1){
+            $usuarios = User::onlyTrashed()->get();
+        }
+        else{
+            $usuarios = User::onlyTrashed()
+            ->where('role_id', 2)
+            ->get();
+        }
         return view('vistas_admin.recuperar_usuarios')->with("usuarios",$usuarios);
     }
 
@@ -277,6 +341,8 @@ class ControladorAdmin extends Controller
     public function borrar_del_todo($id){
         $usuario=User::onlyTrashed()->find($id);
         $usuario->forceDelete();
-        return redirect('/home/lista_usuarios');
+        return redirect()->route('admin_lista_usuarios_mostrar_recuperar');
     }
+
+    
 }

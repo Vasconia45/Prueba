@@ -17,6 +17,9 @@
                 href="{{ route('admin_mostar_crear_usuarios') }}"><i
                     class="bi bi-pencil-square me-2"></i>@lang('messages.Create user')</a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+                href="{{ route('admin_lista_usuarios_mostrar_recuperar') }}"><i
+                class="bi bi-person-dash me-2"></i>@lang('messages.Retrieve user')</a>
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                 href="{{ route('admin_lista_productos') }}"><i
                     class="bi bi-list-task me-2"></i>@lang('messages.Products')</a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
@@ -58,8 +61,8 @@
                             <h3 class="fs-2">{{ $usuarios }}</h3>
                             <p class="fs-5">@lang('messages.Users')</p>
                         </div>
-                        <i
-                            class="data-links fa-solid fa-users fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        <a href="{{ route('admin_lista_usuarios') }}"><i
+                                class="data-links fa-solid fa-users fs-1 primary-text border rounded-full secondary-bg p-3"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
@@ -67,8 +70,8 @@
                         <div>
                             <h3 class="fs-2">{{ $productos }}</h3>
                             <p class="fs-5">@lang('messages.Products')</p>
-                        </div><i
-                            class="data-links fas fa-solid fa-bag-shopping fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div><a href="{{ route('admin_lista_productos') }}"><i
+                                class="data-links fas fa-solid fa-bag-shopping fs-1 primary-text border rounded-full secondary-bg p-3"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
@@ -77,7 +80,8 @@
                             <h3 class="fs-2">{{ $brands }}</h3>
                             <p class="fs-5">@lang('messages.brands')</p>
                         </div>
-                        <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        <a href="{{ route('admin_lista_marcas') }}"><i
+                                class="data-links fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
@@ -86,7 +90,8 @@
                             <h3 class="fs-2">{{ $flights }}</h3>
                             <p class="fs-5">@lang('messages.Flights')</p>
                         </div>
-                        <i class="fas fa-regular fa-plane-departure fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        <a href="{{ route('admin_lista_vuelos') }}"><i
+                                class="data-links fas fa-regular fa-plane-departure fs-1 primary-text border rounded-full secondary-bg p-3"></i></a>
                     </div>
                 </div>
             </div>

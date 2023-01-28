@@ -114,6 +114,10 @@ return[
     "List of product" => "Produktu zerrenda",
     "List flight" => "Hegaldi zerrenda",
     "List product" => "Produktu zerrenda",
+    "Retrieve user" => "Erabiltzailea berreskuratu",
+    "Retrieve" => "Berreskuratu",
+    "Edit" => "Editatu",
+    "Modify" => "Aldatu",
 
     //Lista_Vuelos
 

@@ -11,6 +11,7 @@
                 <th>@lang('messages.Role')</th>
                 <th>@lang('messages.Ascend')</th>
                 <th>@lang('messages.Degrade')</th>
+                <th>@lang('messages.Edit')</th>
                 <th>@lang('messages.Delete')</th>
             </thead>
             <tbody>

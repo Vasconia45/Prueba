@@ -117,6 +117,11 @@ return[
     "List of product" => "List product",
     "List flight" => "List flight",
     "List product" => "List product",
+    "Retrieve user" => "Retrieve User",
+    "Retrieve" => "Retrieve",
+    "Edit" => "Edit",
+    "Modify" => "Modify",
+    
     //Lista_Vuelos
 
     "Lista_vuelos"=>"Flight List",

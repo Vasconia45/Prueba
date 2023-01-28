@@ -18,6 +18,11 @@
         @method('PUT')
         <td><button type="submit" class="btn btn-warning"><i class="bi bi-graph-down-arrow"></i></button></td>
     </form>
+    <form action="{{route('admin_lista_usuarios_mostrar_modificar',[$usuario->id])}}">
+        @csrf
+        <td class="inner-table"><button type="submit" class="btn btn-info"><i class="bi bi-pencil-fill"></i></button>
+        </td>
+    </form>
     <form action="{{route('admin_lista_usuarios_borrar',[$usuario->id])}}" method="POST">
         @csrf
         @method('DELETE')
